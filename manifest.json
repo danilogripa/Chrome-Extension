@@ -1,0 +1,31 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 2,
+    "version": "0.0.5",
+    "name": "Cuponocity",
+    "description": "Tenha os cupons disponiveis com a Cuponocity",
+    "author": "Hugo Chagas Chaves",
+    "icons": { "16": "img/icon16.png",
+               "48": "img/icon48.png",
+               "128": "img/icon128.png" },
+
+    
+    "browser_action": {
+         "default_title": "Tenha os cupons disponiveis com a Cuponocity",
+         "default_popup": "index.html",    
+         "default_icon": "img/icon48.png"
+    },
+    
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": true,
+        "content_security_policy": "script-src 'self' https://*.cuponocity.com; object-src 'self'"
+    },
+    
+    "permissions": [
+        "activeTab",
+        "https://*/*"
+    ], 
+    "content_security_policy": "script-src 'self' https://*.cuponocity.com; object-src 'self';"
+}
